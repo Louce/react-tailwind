@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand section */}
           <div className="space-y-4">
-            <h3 className="text-xl font-light tracking-wide">flow Developer</h3>
+            <h3 className="text-xl font-light tracking-wide">Dendi Rivaldi</h3>
             <p className="text-gray-600 dark:text-gray-400 max-w-xs">
               Creating beautiful, functional digital experiences with a focus on user-centered design.
             </p>
@@ -48,12 +48,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Social links */}
+          {/* Contact Information */}
           <div className="space-y-4">
-            <h4 className="text-sm font-medium uppercase tracking-wider">Connect</h4>
-            <div className="flex space-x-4">
+            <h4 className="text-sm font-medium uppercase tracking-wider">Contact</h4>
+            <ul className="space-y-2">
+              <li className="text-gray-600 dark:text-gray-400">
+                <span className="font-medium">Email:</span> rivaldydendy@gmail.com
+              </li>
+              <li className="text-gray-600 dark:text-gray-400">
+                <span className="font-medium">Phone:</span> +62 8123 xxxx xxxx
+              </li>
+            </ul>
+            <div className="flex space-x-4 mt-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/rivaldydendy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
@@ -64,7 +72,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/in/rivaldydendy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
@@ -75,7 +83,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a 
-                href="https://twitter.com" 
+                href="https://twitter.com/rivaldydendy" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
@@ -92,7 +100,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
           <p className="text-center text-gray-500 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()} flow Developer. All rights reserved.
+            © {new Date().getFullYear()} Dendi Rivaldi. All rights reserved.
           </p>
         </div>
       </div>

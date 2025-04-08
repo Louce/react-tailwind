@@ -4,7 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-modern {
+    @apply transition-all duration-300 ease-in-out transform hover:scale-105;
+  }
+}
+
 @layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
   /* Night mode effects */
   .night-mode-text-glow {
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
@@ -15,13 +33,64 @@
   }
 }
 
+/* Custom animations */
+@keyframes neonPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-15deg); }
+  75% { transform: rotate(15deg); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Night mode specific styles */
+.dark {
+  color-scheme: dark;
+}
+
+.neon-pulse {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+.border-flash {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-flash::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(59, 130, 246, 0.2),
+    transparent
+  );
+  animation: flash 3s infinite;
+}
+
+@keyframes flash {
+  0% { transform: translateX(-100%); }
+  50%, 100% { transform: translateX(100%); }
+}
+
 @layer components {
-  .btn-modern {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-  
   .btn-modern:before {
     content: '';
     position: absolute;
@@ -154,21 +223,6 @@
   100% { background-position: 0% 50%; }
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(-15deg); }
-  40% { transform: rotate(14deg); }
-  60% { transform: rotate(-4deg); }
-  80% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
-}
-
 @keyframes scan {
   0% { background-position: 0 0; }
   100% { background-position: 0 100vh; }
@@ -183,25 +237,10 @@
   }
 }
 
-@keyframes neon-pulse {
-  0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.5); }
-  100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3); }
-}
-
 @keyframes border-pulse {
   0% { border-color: rgba(59, 130, 246, 0.3); }
   50% { border-color: rgba(59, 130, 246, 0.6); }
   100% { border-color: rgba(59, 130, 246, 0.3); }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
 }
 
 @keyframes slowRotate {
@@ -326,21 +365,6 @@
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-  }
-  25% {
-    transform: translateY(-10px) translateX(5px);
-  }
-  50% {
-    transform: translateY(-5px) translateX(10px);
-  }
-  75% {
-    transform: translateY(5px) translateX(-5px);
-  }
-}
-
 @keyframes loadingBar {
   0% {
     width: 0%;
@@ -406,7 +430,7 @@
 }
 
 .neon-pulse {
-  animation: neon-pulse 2s infinite;
+  animation: neonPulse 2s ease-in-out infinite;
 }
 
 /* Fadein animations */

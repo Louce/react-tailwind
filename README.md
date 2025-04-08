@@ -1,54 +1,113 @@
-# React + TypeScript + Vite
+# Modern Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, Vite, and Tailwind CSS. Features an interactive 3D design, dark mode support, and smooth animations.
 
-Currently, two official plugins are available:
+![Portfolio Preview](preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Modern Design**: Clean and professional UI with attention to detail
+- **Interactive 3D Elements**: Engaging user experience with 3D transformations
+- **Dark/Light Mode**: Seamless theme switching with persistent user preference
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Smooth Animations**: Beautiful transitions and micro-interactions
+- **Performance Optimized**: Built with performance best practices
+- **TypeScript Support**: Full type safety and better developer experience
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- [React](https://reactjs.org/) - UI Library
+- [TypeScript](https://www.typescriptlang.org/) - Type Safety
+- [Vite](https://vitejs.dev/) - Build Tool
+- [Tailwind CSS](https://tailwindcss.com/) - Styling
+- [PostCSS](https://postcss.org/) - CSS Processing
+
+## 🛠️ Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/portfolio-website.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Navigate to the project directory:
+```bash
+cd portfolio-website
 ```
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+5. Build for production:
+```bash
+npm run build
+```
+
+## 🎨 Customization
+
+### Personal Information
+Update your personal information in the following files:
+- `src/components/LandingPage.tsx` - Main content and hero section
+- `src/components/Footer.tsx` - Contact information and social links
+
+### Styling
+- Theme colors can be customized in `tailwind.config.js`
+- Animations and transitions can be modified in the CSS sections of `LandingPage.tsx`
+
+### Projects
+Add or modify your projects in the `projects` array within `LandingPage.tsx`:
+```typescript
+const projects = [
+  { 
+    name: 'Project Name',
+    tags: ['Tag1', 'Tag2', 'Tag3']
+  },
+  // Add more projects...
+];
+```
+
+## 📱 Responsive Design
+
+The website is fully responsive and optimized for:
+- Mobile devices
+- Tablets
+- Desktop screens
+- Large displays
+
+## ⚡ Performance
+
+- Optimized asset loading
+- Efficient state management
+- Hardware-accelerated animations
+- Lazy loading of components
+- Minimized bundle size
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/portfolio-website/issues).
+
+## 📧 Contact
+
+Dendi Rivaldi - rivaldydendy@gmail.com
+
+Project Link: [https://github.com/yourusername/portfolio-website](https://github.com/yourusername/portfolio-website)
+
+---
+Made with ❤️ by [Dendi Rivaldi](https://github.com/rivaldydendy)

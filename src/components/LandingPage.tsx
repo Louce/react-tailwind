@@ -840,7 +840,7 @@ const LandingPage = () => {
           <div className="max-w-7xl mx-auto w-full px-8 sm:px-12 relative z-10">
             {/* Header with hover effects */}
             <div className="pt-6 flex justify-between items-center">
-              <p className={`${nightMode ? 'text-white night-mode-text-glow' : 'text-black'} font-light animate-fadeIn relative after:absolute after:w-0 after:h-0.5 after:bg-current after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 transition-colors duration-500 fancy-border-gradient px-3 py-1 rounded-full`} style={{ animationDelay: '200ms' }}>@Ayush Barnwal</p>
+              <p className={`${nightMode ? 'text-white night-mode-text-glow' : 'text-black'} font-light animate-fadeIn relative after:absolute after:w-0 after:h-0.5 after:bg-current after:bottom-0 after:left-0 hover:after:w-full after:transition-all after:duration-300 transition-colors duration-500 fancy-border-gradient px-3 py-1 rounded-full`} style={{ animationDelay: '200ms' }}>@rivaldydendy</p>
               <div className="hidden sm:flex items-center space-x-8">
                 <a
                   href="#about"
@@ -1097,35 +1097,57 @@ const LandingPage = () => {
                           </div>
                         </div>
 
-                        {/* Right face - Floating Particles */}
+                        {/* Right face */}
                         <div 
-                          className={`absolute w-full h-full ${nightMode ? 'bg-purple-900/40' : 'bg-purple-100/80'} rounded-md border ${nightMode ? 'border-purple-600/40' : 'border-purple-300/50'} backdrop-blur-sm`}
+                          className={`absolute w-full h-full transform-gpu ${nightMode ? 'bg-blue-900/40' : 'bg-indigo-100/80'} rounded-md border ${nightMode ? 'border-blue-600/40' : 'border-indigo-300/50'} backdrop-blur-sm`}
                           style={{
                             transform: 'translateX(150px) rotateY(90deg)',
                             transformOrigin: 'right center',
                             boxShadow: nightMode 
-                              ? '0 0 20px rgba(124, 58, 237, 0.3), inset 0 0 15px rgba(124, 58, 237, 0.2)' 
-                              : '0 0 20px rgba(124, 58, 237, 0.1), inset 0 0 15px rgba(124, 58, 237, 0.1)',
+                              ? '0 0 20px rgba(59, 130, 246, 0.3), inset 0 0 15px rgba(59, 130, 246, 0.2)' 
+                              : '0 0 20px rgba(99, 102, 241, 0.1), inset 0 0 15px rgba(99, 102, 241, 0.1)',
                             transition: 'all 0.3s ease',
                             opacity: hoverElement === 'box' ? 1 : 0.9,
-                            overflow: 'hidden'
+                            overflow: 'hidden',
+                            background: nightMode 
+                              ? 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)' 
+                              : 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)'
                           }}
                         >
-                          <div className="relative w-full h-full">
-                            {/* Floating particles */}
-                            {[...Array(20)].map((_, i) => (
-                              <div
-                                key={i}
-                                className={`absolute rounded-full ${nightMode ? 'bg-purple-300' : 'bg-purple-500'}`}
-                                style={{
-                                  width: `${Math.random() * 6 + 2}px`,
-                                  height: `${Math.random() * 6 + 2}px`,
-                                  top: `${Math.random() * 100}%`,
-                                  left: `${Math.random() * 100}%`,
-                                  animation: `float ${Math.random() * 8 + 4}s infinite ease-in-out ${Math.random() * 2}s`
-                                }}
-                              ></div>
-                            ))}
+                          <div className="relative w-full h-full flex flex-col justify-center items-center p-6">
+                            <div 
+                              className={`text-4xl font-bold mb-2 ${nightMode ? 'text-blue-400' : 'text-indigo-600'}`}
+                              style={{
+                                textShadow: nightMode 
+                                  ? '0 0 10px rgba(96, 165, 250, 0.8), 0 0 20px rgba(96, 165, 250, 0.6), 0 0 30px rgba(96, 165, 250, 0.4)'
+                                  : '0 0 10px rgba(99, 102, 241, 0.6), 0 0 20px rgba(99, 102, 241, 0.4)',
+                                animation: 'neonPulse 2s infinite alternate'
+                              }}
+                            >
+                              DESIGN
+                            </div>
+                            
+                            <div 
+                              className={`w-16 h-0.5 my-3 ${nightMode ? 'bg-blue-500' : 'bg-indigo-500'}`}
+                              style={{
+                                boxShadow: nightMode 
+                                  ? '0 0 10px rgba(96, 165, 250, 0.8), 0 0 20px rgba(96, 165, 250, 0.4)'
+                                  : '0 0 10px rgba(99, 102, 241, 0.6)',
+                                animation: 'neonPulse 3s infinite alternate'
+                              }}
+                            />
+                            
+                            <div 
+                              className={`text-2xl font-light ${nightMode ? 'text-blue-300' : 'text-indigo-500'}`}
+                              style={{
+                                textShadow: nightMode 
+                                  ? '0 0 8px rgba(96, 165, 250, 0.6), 0 0 15px rgba(96, 165, 250, 0.4)'
+                                  : '0 0 8px rgba(99, 102, 241, 0.4)',
+                                animation: 'neonPulse 2.5s infinite alternate'
+                              }}
+                            >
+                              CREATE
+                            </div>
                           </div>
                         </div>
 
@@ -1407,8 +1429,8 @@ const LandingPage = () => {
                   <span className={`inline-block text-2xl transition-all duration-300 ${isHovered ? 'animate-wave' : 'animate-float'}`}>👋</span>
                   <span className={`text-white font-medium ml-3 whitespace-nowrap overflow-hidden transition-all duration-300 ${
                     isHovered ? 'max-w-[120px] opacity-100 translate-x-0' : 'max-w-0 opacity-0 -translate-x-4'
-                  } ${nightMode ? 'cyberpunk-text-shadow' : ''}`}>
-                    I'm Ayush
+                  } ${nightMode ? 'text-blue-300 cyberpunk-text-shadow' : 'text-blue-600'}`}>
+                    I'm Dendi
                   </span>
                 </span>
                 <div className={`absolute inset-0 opacity-20 animate-shimmer pointer-events-none ${isHovered ? 'opacity-50' : 'opacity-20'}`}></div>
@@ -1449,7 +1471,7 @@ const LandingPage = () => {
               transitionDelay: '200ms'
             }}>
               <p className={`${nightMode ? 'text-gray-300 night-mode-text-glow leading-7' : 'text-gray-700 leading-relaxed'} transition-colors duration-500 text-lg mb-8`}>
-                I'm a passionate UI/UX designer and frontend developer with a keen eye for creating beautiful, functional digital experiences. My approach merges creativity with practical solutions, resulting in designs that not only look impressive but also deliver exceptional user experiences.
+                I'm Dendi Rivaldi, a passionate UI/UX designer and frontend developer with a keen eye for creating beautiful, functional digital experiences. My approach merges creativity with practical solutions, resulting in designs that not only look impressive but also deliver exceptional user experiences.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12">
                 <div className={`rounded-xl p-6 transition-all duration-500 interactive-card ${
