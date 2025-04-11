@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useContext } from 'react';
+import { NightModeContext } from '../App';
 import Footer from './Footer';
 
 // Enhanced animation styles
@@ -519,7 +520,7 @@ const nightModeStyles = `
 `;
 
 const LandingPage = () => {
-  const [nightMode, setNightMode] = useState(false);
+  const { nightMode, toggleNightMode } = useContext(NightModeContext);
   const [isTextVisible, setIsTextVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -534,12 +535,11 @@ const LandingPage = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [targetRotation, setTargetRotation] = useState({ x: 5, y: 5 });
   const [hoverElement, setHoverElement] = useState<string | null>(null);
-  const [imageLoaded, setImageLoaded] = useState(false);
   const lastMoveTime = useRef(Date.now());
 
   // Add useMemo for random elements to prevent re-renders
   const audioVisualizerBars = useMemo(() => {
-    return [...Array(20)].map((_, i) => {
+    return Array(20).fill(null).map(() => {
       const randomHeight = 20 + Math.floor(Math.random() * 80);
       const randomDuration = 0.5 + Math.random() * 1.5;
       return { height: randomHeight, duration: randomDuration };
@@ -547,7 +547,7 @@ const LandingPage = () => {
   }, []);
 
   const spaceStars = useMemo(() => {
-    return [...Array(100)].map((_, i) => {
+    return Array(100).fill(null).map(() => {
       return {
         width: Math.random() * 2 + 1,
         height: Math.random() * 2 + 1,
@@ -747,28 +747,26 @@ const LandingPage = () => {
     y: mousePosition.y * 20 - 10
   };
   
-  // Toggle night mode with localStorage persistence
-  const toggleNightMode = () => {
-    const newNightMode = !nightMode;
-    setNightMode(newNightMode);
-    // Store night mode preference in localStorage for consistent transitions
-    localStorage.setItem('nightMode', newNightMode.toString());
-    
-    // Apply/remove dark class to document for scrollbar styling
-    if (newNightMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-  
-  // Load night mode preference from localStorage
-  useEffect(() => {
-    const savedMode = localStorage.getItem('nightMode') === 'true';
-    setNightMode(savedMode);
-    if (savedMode) {
-      document.documentElement.classList.add('dark');
-    }
+  // Replace duplicate array generation with useMemo
+  const renderFloatingParticles = useMemo(() => {
+    return Array(20).fill(null).map(() => {
+      const randomHeight = 20 + Math.floor(Math.random() * 80);
+      const randomDuration = 0.5 + Math.random() * 1.5;
+      return { height: randomHeight, duration: randomDuration };
+    });
+  }, []);
+
+  const renderMatrixEffect = useMemo(() => {
+    return Array(100).fill(null).map(() => {
+      return {
+        width: Math.random() * 2 + 1,
+        height: Math.random() * 20 + 10,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        speed: Math.random() * 0.5 + 0.2,
+        opacity: Math.random() * 0.5 + 0.2,
+      };
+    });
   }, []);
 
   return (
@@ -816,7 +814,7 @@ const LandingPage = () => {
           
           {/* Floating particles - in both modes */}
           <div className="absolute inset-0 pointer-events-none z-1">
-            {[...Array(40)].map((_, index) => (
+            {renderFloatingParticles.map((_, index) => (
               <div
                 key={index}
                 className={`absolute w-1 h-1 rounded-full animate-twinkle ${
@@ -1195,7 +1193,7 @@ const LandingPage = () => {
                           }}
                         >
                           <div className="grid grid-cols-10 grid-rows-10 h-full">
-                            {[...Array(100)].map((_, i) => (
+                            {renderMatrixEffect.map((_, i) => (
                               <div 
                                 key={i}
                                 className={`flex items-center justify-center ${nightMode ? 'text-pink-300' : 'text-pink-600'} font-mono text-xs`}

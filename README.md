@@ -26,7 +26,7 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/portfolio-website.git
+git clone https://github.com/Louce/portfolio-website.git
 ```
 
 2. Navigate to the project directory:
@@ -101,13 +101,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/portfolio-website/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Louce/portfolio-website/issues).
 
 ## 📧 Contact
 
 Dendi Rivaldi - rivaldydendy@gmail.com
 
-Project Link: [https://github.com/yourusername/portfolio-website](https://github.com/yourusername/portfolio-website)
+Project Link: [https://github.com/Louce/portfolio-website](https://github.com/Louce/portfolio-website)
 
 ---
 Made with ❤️ by [Dendi Rivaldi](https://github.com/rivaldydendy)
