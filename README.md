@@ -5,7 +5,7 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 ## 📋 Preview
 
 ### Video Demo
-Check out the [video demonstration](https://github.com/Louce/react-tailwind/blob/main/public/assets/Recording%202025-04-11%20105044.mp4) to see all the interactive features in action.
+Check out the [video demonstration](https://raw.githubusercontent.com/Louce/react-tailwind/main/public/assets/Recording%202025-04-11%20105044.gif) to see all the interactive features in action.
 
 ## ✨ Features
 
@@ -29,7 +29,7 @@ Check out the [video demonstration](https://github.com/Louce/react-tailwind/blob
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Louce/portfolio-website.git
+git clone https://github.com/Louce/react-tailwind.git
 ```
 
 2. Navigate to the project directory:
@@ -104,13 +104,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Louce/portfolio-website/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Louce/react-tailwind/issues).
 
 ## 📧 Contact
 
 Dendi Rivaldi - rivaldydendy@gmail.com
 
-Project Link: [https://github.com/Louce/portfolio-website](https://github.com/Louce/portfolio-website)
+Project Link: [https://github.com/Louce/react-tailwind](https://github.com/Louce/react-tailwind)
 
 ---
-Made with ❤️ by [Dendi Rivaldi](https://github.com/rivaldydendy)
+Made with ❤️ by [Dendi Rivaldi](https://github.com/Louce)
