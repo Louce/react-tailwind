@@ -2,7 +2,10 @@
 
 A modern, responsive portfolio website built with React, TypeScript, Vite, and Tailwind CSS. Features an interactive 3D design, dark mode support, and smooth animations.
 
-![Portfolio Preview](preview.png)
+## 📋 Preview
+
+### Video Demo
+Check out the [video demonstration](https://github.com/Louce/react-tailwind/blob/main/public/assets/Recording%202025-04-11%20105044.mp4) to see all the interactive features in action.
 
 ## ✨ Features
 
